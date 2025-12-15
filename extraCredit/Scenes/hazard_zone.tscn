@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpl27mdwc1h2y"]
+
+[ext_resource type="Script" uid="uid://b2o2imc6lgtua" path="res://Scripts/damage_area_2d.gd" id="1_l413s"]
+[ext_resource type="Texture2D" uid="uid://cmxq080htcaar" path="res://Assets/Foozle_2DTR0001_Pixel_Trap_Pack/Fire Trap/PNGs/Fire Trap - Level 1.png" id="2_0a042"]
+[ext_resource type="Texture2D" uid="uid://wfh0wcwqe1xy" path="res://Assets/Foozle_2DTR0001_Pixel_Trap_Pack/Fire Trap/PNGs/Fire Trap - Level 2.png" id="3_75peg"]
+[ext_resource type="Texture2D" uid="uid://c4fyeku7wmkxy" path="res://Assets/Foozle_2DTR0001_Pixel_Trap_Pack/Fire Trap/PNGs/Fire Trap - Level 3.png" id="4_1ymyn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpuq1"]
+radius = 47.0
+height = 436.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_huaoh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0a042")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_75peg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1ymyn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="HazardZone" type="Area2D"]
+script = ExtResource("1_l413s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(230, 30)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_vpuq1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(223, 34)
+sprite_frames = SubResource("SpriteFrames_huaoh")
+frame = 2
+frame_progress = 0.38916847

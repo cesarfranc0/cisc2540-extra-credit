@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://ch0hyw17iq40d"]
+
+[ext_resource type="PackedScene" uid="uid://4ff41574mqpo" path="res://Scenes/player.tscn" id="1_bri2l"]
+[ext_resource type="Script" uid="uid://cncrvnb26irp1" path="res://level_01.gd" id="1_dvup1"]
+[ext_resource type="PackedScene" uid="uid://c4qdihtmlpj6n" path="res://Scenes/ui_hud.tscn" id="2_dvup1"]
+[ext_resource type="PackedScene" uid="uid://dpl27mdwc1h2y" path="res://Scenes/hazard_zone.tscn" id="4_iafiv"]
+[ext_resource type="PackedScene" uid="uid://drcwjihut5o6e" path="res://Scenes/enemy_patrol.tscn" id="5_kdijb"]
+
+[node name="Level01" type="Node2D"]
+script = ExtResource("1_dvup1")
+
+[node name="Player" parent="." instance=ExtResource("1_bri2l")]
+position = Vector2(22, 102)
+speed = 220.0
+
+[node name="HUD" parent="." instance=ExtResource("2_dvup1")]
+
+[node name="HazardZone" parent="." instance=ExtResource("4_iafiv")]
+position = Vector2(182, 200.99998)
+
+[node name="EnemyPatrol" parent="." instance=ExtResource("5_kdijb")]
+position = Vector2(833, 105)
